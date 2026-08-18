@@ -2500,10 +2500,11 @@ html {
 }
 
 .alt-aurora {
-  opacity: 0.42;
+  opacity: 0.58;
   background:
-    radial-gradient(ellipse 38% 24% at 14% 28%, rgba(118, 150, 150, 0.13), transparent 70%),
-    radial-gradient(ellipse 42% 28% at 82% 40%, rgba(232, 185, 120, 0.07), transparent 72%);
+    radial-gradient(ellipse 42% 28% at 14% 27%, rgba(118, 150, 150, 0.14), transparent 70%),
+    radial-gradient(ellipse 44% 30% at 82% 38%, rgba(232, 185, 120, 0.08), transparent 72%),
+    linear-gradient(112deg, transparent 20%, rgba(100, 133, 151, 0.035) 42%, transparent 63%);
 }
 
 .alt-star-field {
@@ -2519,14 +2520,20 @@ html {
   animation: alt-twinkle 5.6s var(--alt-ease-ui) infinite alternate;
 }
 
+.alt-star--glow {
+  box-shadow:
+    0 0 5px rgba(235, 242, 248, 0.9),
+    0 0 13px rgba(176, 203, 219, 0.42);
+}
+
 .alt-shooting-star {
   position: absolute;
   display: block;
-  width: 92px;
+  width: clamp(70px, 7vw, 116px);
   height: 1px;
   border-radius: 999px;
   opacity: 0;
-  transform: rotate(-28deg) translate3d(0, 0, 0);
+  transform: rotate(31deg) translate3d(-35px, 0, 0) scaleX(0.35);
   transform-origin: right center;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9));
   filter: drop-shadow(0 0 4px rgba(232, 185, 120, 0.44));
@@ -2551,8 +2558,83 @@ html {
   transform: translate3d(0, calc(var(--alt-scroll) * 0.17), 0);
 }
 
+.alt-mountain-mid {
+  transform: translate3d(0, calc(var(--alt-scroll) * 0.215), 0);
+}
+
 .alt-mountain-front {
   transform: translate3d(0, calc(var(--alt-scroll) * 0.26), 0);
+}
+
+.alt-horizon-glow {
+  background: radial-gradient(ellipse 76% 42% at 50% 78%, rgba(123, 157, 169, 0.13), transparent 72%);
+  transform: translate3d(0, calc(var(--alt-scroll) * 0.1), 0);
+}
+
+.alt-mist {
+  pointer-events: none;
+  filter: blur(12px);
+  background: linear-gradient(90deg, transparent, rgba(162, 184, 194, 0.07) 22%, rgba(194, 206, 210, 0.11) 50%, rgba(162, 184, 194, 0.06) 76%, transparent);
+  mask-image: linear-gradient(180deg, transparent, #000 35%, #000 65%, transparent);
+}
+
+.alt-mist-one {
+  transform: translate3d(0, calc(var(--alt-scroll) * 0.19), 0);
+}
+
+.alt-mist-two {
+  opacity: 0.7;
+  transform: translate3d(0, calc(var(--alt-scroll) * 0.24), 0);
+}
+
+.alt-cabin {
+  z-index: 3;
+  width: 34px;
+  height: 25px;
+  opacity: 0.92;
+  transform: translate3d(0, calc(var(--alt-scroll) * 0.255), 0);
+}
+
+.alt-cabin-body,
+.alt-cabin-roof,
+.alt-cabin-window,
+.alt-cabin-smoke {
+  position: absolute;
+  display: block;
+}
+
+.alt-cabin-body {
+  inset: 9px 3px 0;
+  background: #080d16;
+}
+
+.alt-cabin-roof {
+  top: 3px;
+  left: 0;
+  width: 35px;
+  height: 12px;
+  transform: skewY(-4deg) rotate(-1deg);
+  clip-path: polygon(50% 0, 100% 82%, 0 100%);
+  background: #050a12;
+}
+
+.alt-cabin-window {
+  right: 8px;
+  bottom: 5px;
+  width: 5px;
+  height: 6px;
+  background: #efbd73;
+  box-shadow: 0 0 11px 2px rgba(232, 185, 120, 0.48);
+}
+
+.alt-cabin-smoke {
+  top: -6px;
+  right: 8px;
+  width: 10px;
+  height: 16px;
+  border-left: 1px solid rgba(203, 216, 221, 0.22);
+  border-radius: 50%;
+  transform: rotate(-18deg);
 }
 
 .alt-hero-copy {
@@ -2645,18 +2727,18 @@ html {
 }
 
 @keyframes alt-shoot {
-  0%, 78% {
+  0%, 72% {
     opacity: 0;
-    transform: rotate(-28deg) translate3d(0, 0, 0);
+    transform: rotate(31deg) translate3d(-35px, 0, 0) scaleX(0.35);
   }
-  80% { opacity: 0.88; }
-  87% {
+  74% { opacity: 0.95; }
+  84% {
     opacity: 0;
-    transform: rotate(-28deg) translate3d(-230px, 0, 0);
+    transform: rotate(31deg) translate3d(280px, 0, 0) scaleX(1);
   }
   100% {
     opacity: 0;
-    transform: rotate(-28deg) translate3d(-230px, 0, 0);
+    transform: rotate(31deg) translate3d(280px, 0, 0) scaleX(1);
   }
 }
 
@@ -3962,9 +4044,17 @@ a:hover .loop-logo-mark > span {
   .alt-sky,
   .alt-star-field,
   .alt-mountain-back,
+  .alt-mountain-mid,
   .alt-mountain-front,
+  .alt-horizon-glow,
+  .alt-mist,
+  .alt-cabin,
   .alt-hero-copy {
     transform: none !important;
+  }
+
+  .alt-mist {
+    filter: blur(12px);
   }
 
   .alt-shooting-star {

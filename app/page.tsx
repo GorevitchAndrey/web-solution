@@ -1,6 +1,6 @@
 const samples = [
     {
-    href: "/pizza",
+    href: "/work/pizza-website",
     index: "00",
     name: "Canto",
     category: "Pizza cafe",
@@ -8,7 +8,7 @@ const samples = [
     theme: "pizza",
   },
   {
-    href: "/altitude",
+    href: "/work/altitude-website",
     index: "01",
     name: "Fernline",
     category: "Luxury travel",
@@ -16,7 +16,7 @@ const samples = [
     theme: "altitude",
   },
   {
-    href: "/loopline",
+    href: "/work/loopline-website",
     index: "02",
     name: "Loopline",
     category: "AI scheduling",
@@ -24,7 +24,7 @@ const samples = [
     theme: "loopline",
   },
   {
-    href: "/kuro",
+    href: "/work/kuro-website",
     index: "03",
     name: "Kuro",
     category: "Ramen & izakaya",
@@ -32,7 +32,7 @@ const samples = [
     theme: "kuro",
   },
   {
-    href: "/kinetic",
+    href: "/work/kinetic-website",
     index: "04",
     name: "Ferrous",
     category: "Creative studio",
@@ -40,7 +40,7 @@ const samples = [
     theme: "kinetic",
   },
   {
-    href: "/densho",
+    href: "/work/densho-website",
     index: "05",
     name: "Densho",
     category: "Specialty coffee",
@@ -70,7 +70,7 @@ const services = [
   },
 ];
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://portfolio.example";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://easy-web-solution.com";
 
 const structuredData = {
   "@context": "https://schema.org",

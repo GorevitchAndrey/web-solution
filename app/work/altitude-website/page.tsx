@@ -2,18 +2,24 @@
 
 import { useEffect, useRef } from "react";
 
-const stars = Array.from({ length: 74 }, (_, index) => ({
-  left: `${(index * 47 + 11) % 100}%`,
-  top: `${(index * 29 + 7) % 67}%`,
-  size: index % 13 === 0 ? 2 : index % 5 === 0 ? 1.5 : 1,
-  opacity: 0.24 + ((index * 17) % 52) / 100,
-  delay: `${(index % 9) * -0.7}s`,
+const stars = Array.from({ length: 132 }, (_, index) => ({
+  left: `${(index * 47 + index * index * 7 + 11) % 100}%`,
+  top: `${(index * 29 + index * index * 3 + 5) % 76}%`,
+  size: index % 29 === 0 ? 2.4 : index % 11 === 0 ? 1.7 : index % 4 === 0 ? 1.2 : 0.8,
+  opacity: 0.22 + ((index * 17) % 58) / 100,
+  delay: `${((index * 13) % 57) * -0.17}s`,
+  duration: `${4.2 + ((index * 7) % 31) / 10}s`,
+  glow: index % 29 === 0,
 }));
 
 const shootingStars = [
-  { left: "18%", top: "16%", delay: "1.6s", duration: "6.8s" },
-  { left: "66%", top: "9%", delay: "5.4s", duration: "8.6s" },
-  { left: "82%", top: "30%", delay: "9.2s", duration: "10.4s" },
+  { left: "8%", top: "12%", delay: "-1.2s", duration: "6.2s" },
+  { left: "29%", top: "5%", delay: "-4.8s", duration: "7.4s" },
+  { left: "48%", top: "20%", delay: "-2.6s", duration: "5.7s" },
+  { left: "68%", top: "8%", delay: "-6.1s", duration: "8.1s" },
+  { left: "80%", top: "27%", delay: "-3.7s", duration: "6.8s" },
+  { left: "91%", top: "14%", delay: "-7.3s", duration: "8.9s" },
+  { left: "57%", top: "2%", delay: "-0.4s", duration: "7.8s" },
 ];
 
 const lodges = [
@@ -106,7 +112,7 @@ export default function Altitude() {
             {stars.map((star, index) => (
               <i
                 key={index}
-                className="alt-star"
+                className={`alt-star${star.glow ? " alt-star--glow" : ""}`}
                 style={{
                   left: star.left,
                   top: star.top,
@@ -114,6 +120,7 @@ export default function Altitude() {
                   height: star.size,
                   opacity: star.opacity,
                   animationDelay: star.delay,
+                  animationDuration: star.duration,
                 }}
               />
             ))}
@@ -132,22 +139,52 @@ export default function Altitude() {
           </div>
         </div>
 
-        <div className="alt-mountain-back absolute inset-x-0 bottom-0 h-[53%]" aria-hidden="true">
+        <div className="alt-horizon-glow absolute inset-x-0 bottom-0 h-[58%]" aria-hidden="true" />
+        <div className="alt-mountain-back absolute inset-x-0 bottom-0 h-[55%]" aria-hidden="true">
           <svg viewBox="0 0 1600 620" preserveAspectRatio="none" className="h-full w-full">
-            <path d="M0 620V430L170 285l92 72 175-207 135 153 118-93 150 165 125-120 90 83 153-220 168 225 224-143v390Z" fill="#111b2e" />
-            <path d="m170 285 92 72 175-207 135 153 118-93 150 165 125-120 90 83 153-220 168 225 224-143v390H0V430Z" fill="url(#mountainFade)" />
+            <path d="M0 620V430C106 397 180 380 273 350c101-33 165-105 256-121 90-16 157 52 240 53 88 2 150-86 238-114 99-32 161 62 248 81 120 27 202-68 345-91v462Z" fill="url(#farRidge)" />
+            <path d="M246 362c111-40 176-115 282-133 88-15 152 48 239 53 90 5 160-81 240-114" fill="none" stroke="rgba(197,214,227,.12)" strokeWidth="2" />
             <defs>
-              <linearGradient id="mountainFade" x1="800" y1="118" x2="800" y2="620" gradientUnits="userSpaceOnUse">
-                <stop stopColor="#1c2a42" stopOpacity=".88" />
-                <stop offset="1" stopColor="#0d1423" />
+              <linearGradient id="farRidge" x1="800" y1="160" x2="800" y2="620" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#263953" stopOpacity=".76" />
+                <stop offset=".55" stopColor="#17263b" />
+                <stop offset="1" stopColor="#101a2b" />
               </linearGradient>
             </defs>
           </svg>
         </div>
-        <div className="alt-mountain-front absolute inset-x-0 bottom-0 h-[37%]" aria-hidden="true">
-          <svg viewBox="0 0 1600 430" preserveAspectRatio="none" className="h-full w-full">
-            <path d="M0 430V285l165-107 112 62L485 73l150 146 140-87 205 166 168-137 125 73 142-121 185 153v164Z" fill="#09101d" />
+
+        <div className="alt-mist alt-mist-one absolute inset-x-0 bottom-[28%] h-24" aria-hidden="true" />
+
+        <div className="alt-mountain-mid absolute inset-x-0 bottom-0 h-[45%]" aria-hidden="true">
+          <svg viewBox="0 0 1600 520" preserveAspectRatio="none" className="h-full w-full">
+            <path d="M0 520V404c91-22 178-84 265-116 61-23 101-7 151-31 78-37 116-142 211-173 74-25 122 91 190 110 66 18 114-31 174-17 77 19 113 126 190 140 81 15 146-92 231-104 63-8 129 31 188 63v244Z" fill="url(#midRidge)" />
+            <path d="M416 257c79-39 117-142 211-173 44-15 78 21 111 59l-61-28-48 60-39-38-81 81Z" fill="rgba(215,225,231,.13)" />
+            <path d="M1181 317c81 15 146-92 231-104 44-6 88 11 130 33l-100 4-34 48-35-29-74 69Z" fill="rgba(210,222,229,.1)" />
+            <path d="M0 435c136-14 225-112 350-120 95-6 143 63 238 60 111-4 171-101 273-96 118 5 166 104 269 107 111 3 176-87 292-94 60-3 119 12 178 42" fill="none" stroke="rgba(210,223,231,.075)" strokeWidth="2" />
+            <defs>
+              <linearGradient id="midRidge" x1="820" y1="84" x2="820" y2="520" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#17273b" />
+                <stop offset="1" stopColor="#0b1423" />
+              </linearGradient>
+            </defs>
           </svg>
+        </div>
+
+        <div className="alt-mist alt-mist-two absolute inset-x-0 bottom-[13%] h-20" aria-hidden="true" />
+
+        <div className="alt-mountain-front absolute inset-x-0 bottom-0 h-[27%]" aria-hidden="true">
+          <svg viewBox="0 0 1600 330" preserveAspectRatio="none" className="h-full w-full">
+            <path d="M0 330V214c138-5 222-96 355-87 117 8 173 102 288 99 132-4 209-118 348-113 119 4 185 105 297 103 115-2 194-71 312-83v197Z" fill="#080f1b" />
+            <path d="M0 256c172-2 224-74 362-69 104 4 174 71 280 67 126-5 216-91 350-84 116 6 188 75 296 73 125-2 191-54 312-63" fill="none" stroke="rgba(148,171,178,.06)" strokeWidth="2" />
+          </svg>
+        </div>
+
+        <div className="alt-cabin absolute bottom-[13.5%] right-[13vw]" aria-hidden="true">
+          <span className="alt-cabin-roof" />
+          <span className="alt-cabin-body" />
+          <span className="alt-cabin-window" />
+          <span className="alt-cabin-smoke" />
         </div>
 
         <div className="relative z-20 flex min-h-[100svh] flex-col justify-end px-[6vw] pb-[9vh] pt-36">
