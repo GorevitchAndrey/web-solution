@@ -1,5 +1,5 @@
 const samples = [
-    {
+  {
     href: "/work/pizza-website",
     index: "00",
     name: "Canto",
@@ -52,21 +52,31 @@ const samples = [
 const services = [
   {
     number: "01",
+    href: "/services/website-fixes",
     title: "Website fixes",
     price: "From $100",
     description: "Focused help for broken layouts, slow pages, mobile issues, forms, integrations, and unfinished details.",
   },
   {
     number: "02",
+    href: "/services/business-websites",
     title: "Business websites",
     price: "From $600",
     description: "Clear, fast, search-ready websites that make a small business feel established and easy to trust.",
   },
   {
     number: "03",
+    href: "/services/custom-web-app-development",
     title: "Custom web apps",
     price: "Scoped to fit",
     description: "Purpose-built dashboards, internal tools, portals, and product interfaces designed around real workflows.",
+  },
+  {
+    number: "04",
+    href: "/services/web-development-calgary",
+    title: "Calgary web development",
+    price: "Local & remote",
+    description: "Custom web development for Calgary businesses that need a polished website or application built around a real business goal.",
   },
 ];
 
@@ -75,7 +85,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://easy-web-solution.c
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  name: "Andrii Web Development",
+  name: "Easy Web Solution",
   url: siteUrl,
   email: "mailto:doc.horevych@gmail.com",
   telephone: "+18252883116",
@@ -98,6 +108,7 @@ const structuredData = {
       itemOffered: {
         "@type": "Service",
         name: service.title,
+        url: `${siteUrl}${service.href}`,
         description: service.description,
       },
     })),
@@ -198,7 +209,7 @@ export default function Home() {
           A<span>/</span>
         </a>
         <nav aria-label="Main navigation">
-          <a href="#services">Services</a>
+          <a href="/services">Services</a>
           <a href="#work">Work</a>
           <a href="#about">About</a>
         </nav>
@@ -239,14 +250,14 @@ export default function Home() {
         </div>
         <div className="home-service-list">
           {services.map((service) => (
-            <article className="home-service-row" key={service.number}>
+            <a className="home-service-row" href={service.href} key={service.number}>
               <span>{service.number}</span>
               <div>
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>
               </div>
               <strong>{service.price}</strong>
-            </article>
+            </a>
           ))}
         </div>
       </section>

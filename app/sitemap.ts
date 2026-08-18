@@ -1,9 +1,24 @@
 import type { MetadataRoute } from "next";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://portfolio.example";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://easy-web-solution.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const samples = ["altitude", "loopline", "kuro", "kinetic", "densho", "pizza"];
+  const workRoutes = [
+    "work/pizza-website",
+    "work/altitude-website",
+    "work/loopline-website",
+    "work/kuro-website",
+    "work/kinetic-website",
+    "work/densho-website",
+  ];
+
+  const serviceRoutes = [
+    "services",
+    "services/web-development-calgary",
+    "services/business-websites",
+    "services/custom-web-app-development",
+    "services/website-fixes",
+  ];
 
   return [
     {
@@ -12,7 +27,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 1,
     },
-    ...samples.map((route) => ({
+    ...serviceRoutes.map((route, index) => ({
+      url: `${siteUrl}/${route}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: index === 0 ? 0.9 : 0.85,
+    })),
+    ...workRoutes.map((route) => ({
       url: `${siteUrl}/${route}`,
       lastModified: new Date(),
       changeFrequency: "yearly" as const,
