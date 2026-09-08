@@ -69,8 +69,8 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
         <a className="services-brand" href="/">EASY / WEB / SOLUTION</a>
         <nav className="services-nav-links" aria-label="Service page navigation">
           <a href="/services">All services</a>
-          <a href="/#work">Work</a>
-          <a href="mailto:doc.horevych@gmail.com">Contact</a>
+          <a href="/case-studies">Case studies</a>
+          <a href="/contact">Contact</a>
         </nav>
       </header>
 
@@ -80,8 +80,8 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
           <h1>{service.title}</h1>
           <p className="services-lede">{service.intro}</p>
           <div className="services-actions">
-            <a className="services-button services-button--primary" href="mailto:doc.horevych@gmail.com">Discuss this service</a>
-            <a className="services-button" href="/services">View all services</a>
+            <a className="services-button services-button--primary" href="/contact">Discuss this service</a>
+            <a className="services-button" href="/case-studies">View case studies</a>
           </div>
         </section>
 
@@ -153,12 +153,12 @@ export default function ServicePage({ params }: { params: { slug: string } }) {
         <section className="services-cta">
           <h2>Have a project that sounds like this?</h2>
           <p>Send me a short description of the business, the current situation, and what you want the website or application to accomplish.</p>
-          <a className="services-button services-button--primary" href="mailto:doc.horevych@gmail.com">Start a project</a>
+          <a className="services-button services-button--primary" href="/contact">Start a project</a>
         </section>
       </main>
 
       <footer className="services-footer">
-        <a href="/services">Services</a> · Easy Web Solution · Calgary, Alberta
+        <a href="/services">Services</a> · <a href="/case-studies">Case studies</a> · <a href="/about">About</a> · Easy Web Solution · Calgary, Alberta
       </footer>
     </div>
   );

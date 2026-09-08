@@ -20,9 +20,9 @@ export default function ServicesPage() {
       <header className="services-nav">
         <a className="services-brand" href="/">EASY / WEB / SOLUTION</a>
         <nav className="services-nav-links" aria-label="Services navigation">
-          <a href="/">Home</a>
-          <a href="/#work">Work</a>
-          <a href="mailto:doc.horevych@gmail.com">Contact</a>
+          <a href="/case-studies">Case studies</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
         </nav>
       </header>
 
@@ -35,8 +35,8 @@ export default function ServicesPage() {
             each service has a clear scope and a page that explains what it is for.
           </p>
           <div className="services-actions">
-            <a className="services-button services-button--primary" href="mailto:doc.horevych@gmail.com">Discuss a project</a>
-            <a className="services-button" href="/#work">See selected work</a>
+            <a className="services-button services-button--primary" href="/contact">Discuss a project</a>
+            <a className="services-button" href="/case-studies">See case studies</a>
           </div>
         </section>
 
@@ -64,11 +64,11 @@ export default function ServicesPage() {
         <section className="services-cta">
           <h2>Not sure which service fits?</h2>
           <p>Send me the problem, the current URL if there is one, and what you want the site or application to accomplish.</p>
-          <a className="services-button services-button--primary" href="mailto:doc.horevych@gmail.com">Start with the problem</a>
+          <a className="services-button services-button--primary" href="/contact">Start with the problem</a>
         </section>
       </main>
 
-      <footer className="services-footer">Easy Web Solution · Calgary, Alberta · Web design & development</footer>
+      <footer className="services-footer"><a href="/case-studies">Case studies</a> · <a href="/about">About</a> · Easy Web Solution · Calgary, Alberta</footer>
     </div>
   );
 }
