@@ -11,6 +11,7 @@ import {
   Cormorant,
 } from "next/font/google";
 import "./globals.css";
+import "./seo-pages.css";
 
 const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-fraunces", weight: ["300", "400", "500"] });
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope", weight: ["300", "400", "500", "600"] });
@@ -23,21 +24,13 @@ const archivo = Archivo({ subsets: ["latin"], variable: "--font-archivo", weight
 const cormorant = Cormorant({ subsets: ["latin"], variable: "--font-cormorant", weight: ["400", "500"], style: ["normal", "italic"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://portfolio.example"),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://easy-web-solution.com"),
   title: {
-    default: "Calgary Web Developer | Websites & Custom Web Apps | Andrii",
-    template: "%s | Andrii Web Development",
+    default: "Calgary Web Developer | Easy Web Solution",
+    template: "%s | Easy Web Solution",
   },
   description:
     "Calgary web designer and developer creating fast business websites, polished landing pages, website fixes, and custom web applications.",
-  keywords: [
-    "Calgary web developer",
-    "Calgary web designer",
-    "website development Calgary",
-    "small business website Calgary",
-    "custom web application developer",
-    "Next.js developer Calgary",
-  ],
   authors: [{ name: "Andrii" }],
   creator: "Andrii",
   alternates: {
@@ -47,7 +40,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_CA",
     url: "/",
-    siteName: "Andrii Web Development",
+    siteName: "Easy Web Solution",
     title: "Calgary Web Developer | Websites & Custom Web Apps",
     description:
       "Thoughtful websites and custom web applications for businesses in Calgary and beyond.",
@@ -74,7 +67,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
-      lang="en"
+      lang="en-CA"
       className={`${fraunces.variable} ${manrope.variable} ${grotesk.variable} ${mono.variable} ${bebas.variable} ${noto.variable} ${archivoBlack.variable} ${archivo.variable} ${cormorant.variable}`}
     >
       <body>{children}</body>
