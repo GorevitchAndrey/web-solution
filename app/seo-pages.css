@@ -157,6 +157,28 @@
 }
 .content-footer-links { display: flex; flex-wrap: wrap; gap: 1rem; }
 
+/* Long-form Calgary buyer guides */
+.guide-hero { padding-bottom: clamp(3rem, 6vw, 5rem); }
+.guide-hero h1 { max-width: 920px; font-size: clamp(2.8rem, 6vw, 5.8rem); }
+.guide-meta { display: flex; flex-wrap: wrap; gap: .7rem 1.4rem; margin-top: 2rem; color: #8290a3; font-size: .74rem; letter-spacing: .05em; text-transform: uppercase; }
+.guide-article { width: min(820px, 100%); margin: 0 auto; padding: clamp(3.5rem, 7vw, 6.5rem) 0; }
+.guide-section { padding: 0 0 clamp(3rem, 6vw, 5rem); }
+.guide-section + .guide-section { padding-top: clamp(2.6rem, 5vw, 4rem); border-top: 1px solid var(--content-line); }
+.guide-section h2 { margin: 0 0 1.4rem; font-family: var(--font-grotesk), sans-serif; font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 500; letter-spacing: -.04em; line-height: 1.08; }
+.guide-section p,
+.guide-section li { color: #b1bdcb; font-size: 1.02rem; line-height: 1.85; }
+.guide-section p { margin: 0 0 1.35rem; }
+.guide-section ul { display: grid; gap: .7rem; margin: 1.4rem 0 1.7rem; padding-left: 1.3rem; }
+.guide-section .content-note { margin-top: 1.7rem; color: #c4cedb; }
+.guide-faq { border-top: 1px solid var(--content-line); }
+.guide-faq details { border-bottom: 1px solid var(--content-line); }
+.guide-faq summary { cursor: pointer; padding: 1.25rem 0; font-family: var(--font-grotesk), sans-serif; font-size: 1.08rem; }
+.guide-faq details p { padding: 0 0 1.4rem; }
+.guide-related { border-top: 1px solid var(--content-line); }
+.guide-cta { margin: clamp(2rem, 5vw, 4rem) 0 clamp(5rem, 9vw, 8rem); padding: clamp(2rem, 5vw, 4rem); border: 1px solid rgba(113,136,255,.3); border-radius: 22px; background: linear-gradient(145deg, rgba(29,42,70,.9), rgba(12,22,37,.92)); }
+.guide-cta h2 { max-width: 760px; margin: 0; font-family: var(--font-grotesk), sans-serif; font-size: clamp(2rem, 5vw, 4rem); font-weight: 500; letter-spacing: -.05em; line-height: 1.03; }
+.guide-cta > p:not(.content-kicker) { max-width: 680px; color: #b0bcc9; line-height: 1.8; }
+
 @media (max-width: 800px) {
   .content-nav { align-items: flex-start; }
   .content-nav-links { flex-wrap: wrap; justify-content: flex-end; gap: .8rem 1rem; }
@@ -174,5 +196,7 @@
   .content-main,
   .content-footer { width: min(100% - 2rem, 1180px); }
   .content-hero h1 { font-size: clamp(2.6rem, 14vw, 4.2rem); }
+  .guide-hero h1 { font-size: clamp(2.45rem, 13vw, 3.8rem); }
+  .guide-article { padding-top: 3rem; }
   .content-footer { flex-direction: column; }
 }

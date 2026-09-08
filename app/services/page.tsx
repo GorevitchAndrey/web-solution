@@ -14,6 +14,24 @@ export const metadata: Metadata = {
   },
 };
 
+const guides = [
+  {
+    href: "/how-much-does-a-website-cost-in-calgary",
+    title: "How Much Does a Website Cost in Calgary?",
+    description: "Planning ranges, pricing factors, and questions to ask before comparing website quotes.",
+  },
+  {
+    href: "/how-to-choose-a-web-developer-in-calgary",
+    title: "How to Choose a Web Developer in Calgary",
+    description: "A practical checklist for comparing developers, freelancers, agencies, process, ownership, and risk.",
+  },
+  {
+    href: "/website-redesign-calgary-guide",
+    title: "Website Redesign Calgary Guide",
+    description: "How to plan a redesign while protecting useful content, existing URLs, SEO signals, and customer experience.",
+  },
+];
+
 export default function ServicesPage() {
   return (
     <div className="services-shell">
@@ -56,6 +74,23 @@ export default function ServicesPage() {
                 <h2>{service.shortTitle}</h2>
                 <p>{service.description}</p>
                 <strong>Explore service →</strong>
+              </a>
+            ))}
+          </div>
+        </section>
+
+        <section className="services-section" aria-labelledby="guide-list-title">
+          <div className="services-section-heading">
+            <h2 id="guide-list-title">Planning a website?</h2>
+            <p>These Calgary-focused guides answer three of the questions business owners usually have before a project starts.</p>
+          </div>
+          <div className="services-grid">
+            {guides.map((guide) => (
+              <a className="services-card" href={guide.href} key={guide.href}>
+                <span>Guide</span>
+                <h2>{guide.title}</h2>
+                <p>{guide.description}</p>
+                <strong>Read guide →</strong>
               </a>
             ))}
           </div>
