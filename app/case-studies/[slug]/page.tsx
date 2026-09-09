@@ -36,7 +36,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
         headline: study.title,
         description: study.description,
         url,
-        author: { "@type": "Person", name: "Andrii" },
+        author: { "@type": "Person", name: "Andrew" },
         publisher: { "@type": "Organization", name: "Easy Web Solution", url: siteUrl },
         about: study.type,
       },

@@ -47,7 +47,7 @@ export default function GuidePage({
         dateModified: "2026-09-08",
         author: {
           "@type": "Person",
-          name: "Andrii",
+          name: "Andrew",
           url: `${siteUrl}/about`,
         },
         publisher: {

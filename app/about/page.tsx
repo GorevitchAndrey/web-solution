@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "About Easy Web Solution and Andrii, a Calgary web developer focused on thoughtful websites, custom web applications, responsive UI, and practical frontend engineering.",
+  description: "About Easy Web Solution, a Calgary web developer focused on thoughtful websites, custom web applications, responsive UI, and practical frontend engineering.",
   alternates: { canonical: "/about" },
   openGraph: {
     type: "profile",
@@ -19,7 +19,7 @@ export default function AboutPage() {
     "@graph": [
       {
         "@type": "Person",
-        name: "Andrii",
+        name: "Andrew",
         url: `${siteUrl}/about`,
         jobTitle: "Web Developer",
         worksFor: {
@@ -60,7 +60,7 @@ export default function AboutPage() {
           <p className="content-eyebrow">About / Calgary, Alberta</p>
           <h1>Product thinking, frontend craft, and practical web development.</h1>
           <p className="content-lede">
-            I&apos;m Andrii, a Calgary-based web developer behind Easy Web Solution. I design and build websites and web applications with an emphasis on clear hierarchy, responsive behaviour, maintainable code, and a polished user experience.
+            I&apos;m Andrew, a Calgary-based web developer behind Easy Web Solution. I design and build websites and web applications with an emphasis on clear hierarchy, responsive behaviour, maintainable code, and a polished user experience.
           </p>
           <div className="content-actions">
             <a className="content-button content-button--primary" href="/contact">Start a project</a>

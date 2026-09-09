@@ -31,8 +31,8 @@ export const metadata: Metadata = {
   },
   description:
     "Calgary web designer and developer creating fast business websites, polished landing pages, website fixes, and custom web applications.",
-  authors: [{ name: "Andrii" }],
-  creator: "Andrii",
+  authors: [{ name: "Andrew" }],
+  creator: "Andrew",
   alternates: {
     canonical: "/",
   },

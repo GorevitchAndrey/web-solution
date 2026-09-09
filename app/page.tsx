@@ -205,13 +205,13 @@ export default function Home() {
       />
 
       <header className="home-header">
-        <a className="home-logo" href="#" aria-label="Andrii, home">
+        <a className="home-logo" href="#" aria-label="Easy Web Solution, home">
           A<span>/</span>
         </a>
         <nav aria-label="Main navigation">
           <a href="/services">Services</a>
           <a href="#work">Work</a>
-          <a href="#about">About</a>
+          <a href="/about">About</a>
         </nav>
         <a className="home-header-cta" href="mailto:easy.web.solution.dev@gmail.com">
           Start a project <Arrow />
@@ -366,7 +366,7 @@ export default function Home() {
       <footer className="home-footer">
         <a className="home-logo" href="#" aria-label="Back to top">A<span>/</span></a>
         <p>Independent web designer &amp; developer<br />Calgary, Alberta</p>
-        <p>© {new Date().getFullYear()} Andrii. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} Easy Web Solution. All rights reserved.</p>
       </footer>
     </main>
   );
