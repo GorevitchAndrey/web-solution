@@ -369,7 +369,7 @@ Location positioning:
 **Calgary, Alberta, Canada**
 
 Current public contact details used on the site:
-- Email: `doc.horevych@gmail.com`
+- Email: `easy.web.solution.dev@gmail.com`
 - Phone: `+1 825 288 3116`
 
 Future trust improvement:

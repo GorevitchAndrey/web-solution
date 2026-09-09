@@ -87,7 +87,7 @@ const structuredData = {
   "@type": "ProfessionalService",
   name: "Easy Web Solution",
   url: siteUrl,
-  email: "mailto:doc.horevych@gmail.com",
+  email: "mailto:easy.web.solution.dev@gmail.com",
   telephone: "+18252883116",
   description: "Web design, website development, website fixes, and custom web applications for businesses in Calgary and beyond.",
   address: {
@@ -213,7 +213,7 @@ export default function Home() {
           <a href="#work">Work</a>
           <a href="#about">About</a>
         </nav>
-        <a className="home-header-cta" href="mailto:doc.horevych@gmail.com">
+        <a className="home-header-cta" href="mailto:easy.web.solution.dev@gmail.com">
           Start a project <Arrow />
         </a>
       </header>
@@ -358,7 +358,7 @@ export default function Home() {
         <p className="home-kicker">Have something in mind?</p>
         <h2>Let&apos;s make it<br /><em>work beautifully.</em></h2>
         <div className="home-contact-links">
-          <a href="mailto:doc.horevych@gmail.com">doc.horevych@gmail.com <Arrow /></a>
+          <a href="mailto:easy.web.solution.dev@gmail.com">easy.web.solution.dev@gmail.com <Arrow /></a>
           <a href="tel:+18252883116">+1 825 288 3116 <Arrow /></a>
         </div>
       </section>

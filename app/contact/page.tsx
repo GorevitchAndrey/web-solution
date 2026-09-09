@@ -25,7 +25,7 @@ export default function ContactPage() {
           "@type": "ProfessionalService",
           name: "Easy Web Solution",
           url: siteUrl,
-          email: "mailto:doc.horevych@gmail.com",
+          email: "mailto:easy.web.solution.dev@gmail.com",
           telephone: "+18252883116",
           areaServed: [{ "@type": "City", name: "Calgary" }, { "@type": "Country", name: "Canada" }],
         },
@@ -65,9 +65,9 @@ export default function ContactPage() {
             <p>Email is the easiest way to send project context, links, screenshots, requirements, or a description of the problem.</p>
           </div>
           <div className="content-contact-grid">
-            <a className="content-card content-card--link" href="mailto:doc.horevych@gmail.com">
+            <a className="content-card content-card--link" href="mailto:easy.web.solution.dev@gmail.com">
               <span>Email</span>
-              <strong className="content-contact-value">doc.horevych@gmail.com</strong>
+              <strong className="content-contact-value">easy.web.solution.dev@gmail.com</strong>
               <p>Best for project details, existing website links, screenshots, and scope.</p>
             </a>
             <a className="content-card content-card--link" href="tel:+18252883116">
